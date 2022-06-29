@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{a4paper,tmargin=2.3cm,bmargin=2.3cm,lmargin=3cm,rmargin=3cm}
+
+\newcounter{aufgabencounter}
+\newcommand{\aufgabe}[1]{%
+\refstepcounter{aufgabencounter}%
+\vspace{0.5cm} {\bf Exercise \arabic{aufgabencounter} (\bf #1)} %
+}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+\huge{Student's exam questions} 
+\end{center}
+
+You can choose among the following topics that cover the whole supervised learning part of the lecture. Ask questions testing the understanding or transferring capabilties of your fellow students. 
+
+\begin{itemize}
+\item Bayesian Decision Theory
+\item Empirical Risk Minimization
+\item Linear Least Squares Regression
+\item Lasso
+\item Ridge
+\item Cross Validation
+\item Logistic Regression
+\item Evaluation of classificaiton results
+\item Kernels
+\item Support Vector Machines
+\item Random Forests
+\item Boosting
+\item Bootstrap
+\item (kernel) PCA
+\end{itemize}
+
+The following question is a reasonable start. But you can also go more into the details, demand calculations, describe a particular case or combine different topics.
+
+\aufgabe{Classification performance, understanding}
+
+In a classification setting, when and why is accuracy a bad performance measure and which alternative performance measure could you consider in such a case? Reinforce that this case is relevant by naming 3 example applications where you would not use accuracy.
+
+\textsc{solution:} Often there are many more negatives than positives (relevant webpages in a search query, links in a social network, ...). Accuracy weights the performance on negatives and positives equally. When one is more interested in the positives than the negatives (useful drug among chemicals, extreme weather events, cancer detection, ...), then the ROC curve, sensitivity/recall and precision are alternative performance measures, which combine the values of the confusion table differently. Discussing the whole confusion table is also an option.
+
+
+
+
+\end{document}
