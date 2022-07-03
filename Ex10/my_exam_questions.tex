@@ -34,15 +34,37 @@ You can choose among the following topics that cover the whole supervised learni
 \item (kernel) PCA
 \end{itemize}
 
-The following question is a reasonable start. But you can also go more into the details, demand calculations, describe a particular case or combine different topics.
+\aufgabe{Kernels, understanding}
 
-\aufgabe{Classification performance, understanding}
-
-In a classification setting, when and why is accuracy a bad performance measure and which alternative performance measure could you consider in such a case? Reinforce that this case is relevant by naming 3 example applications where you would not use accuracy.
-
-\textsc{solution:} Often there are many more negatives than positives (relevant webpages in a search query, links in a social network, ...). Accuracy weights the performance on negatives and positives equally. When one is more interested in the positives than the negatives (useful drug among chemicals, extreme weather events, cancer detection, ...), then the ROC curve, sensitivity/recall and precision are alternative performance measures, which combine the values of the confusion table differently. Discussing the whole confusion table is also an option.
+Name one advantage and disadvantage of the Kernel Trick\\
+\textsc{solution:} The main advantage of the Kernel Trick is that one can solve a non-linear problem with a linear classifier. One huge disadvantage is that the output depends
+on the kernel choice: If one assumes any underlying distribution of the data, the kernel can be chosen accordingly. However, if there are no underlying assumptions or inducive biases the kernel trick does not work well with arbitrary kernels.
 
 
+\aufgabe{Linear Least Squares Regression, understanding}
 
+Explain the terms bias and variance in the Regression Setting and relate them to ridge vs lasso. \\
+\textsc{solution:} Bias describe underlying assumptions that are used to simplify and generalize the model. The goal is to decrease the complexity of the model and its sensitivity to outliers.\\
+Variance describes the errors of a model to individual data points. Low variance means that the individual data points are fitted closely, which increases the risk of overfitting. Meanwhile higher variance is often related to a strong generalization of the data points which corresponds to underfitting in the extreme case.\\
+The squared regularization term of ridge regression penalizes the weights of the fitted function strongly. Ridge regression rather focuses on reducing the variance. \\
+Lasso regression sets multiple coefficients to zero resulting in the decreasing complexity of the model. Therefore Lasso rather focuses on decreasing the bias
+
+
+\aufgabe{Model Complexity, transfer}
+
+For each of the following methods, describe brielfy how the bias can be decreased (no need to explain the methods)\\
+\begin{itemize}
+\item Logistic Regression
+\item K-nearest Neighbors
+\item Polynomial (Function) Fitting 
+\item Lasso Regression
+\end{itemize}
+\textsc{solution:} 
+\begin{itemize}
+    \item Logistic Regression: increase number of regression coefficients
+    \item K-nearest Neighbors: decrease k
+    \item Polynomial (Function) Fitting: increasing polynomial degree 
+    \item Lasso Regression: drecreasing the regularization parameter $ \lambda$
+\end{itemize}
 
 \end{document}
